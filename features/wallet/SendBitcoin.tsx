@@ -14,7 +14,6 @@ export const SendBitcoin = () => {
   const [address, setAddress] = useState("");
 
   const handleSend = () => {
-    // Developer will implement proper validation and sending logic
     Alert.alert("Confirm Transaction", `Send ${amount} BTC to ${address}?`, [
       { text: "Cancel", style: "cancel" },
       {
