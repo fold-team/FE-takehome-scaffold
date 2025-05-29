@@ -10,21 +10,17 @@ const network = bitcoin.networks.testnet;
 
 async function createWallet() {
   try {
-    // Generate a random seed
     const seed = Buffer.alloc(32);
     for (let i = 0; i < 32; i++) {
       seed[i] = Math.floor(Math.random() * 256);
     }
 
-    // Generate master key from seed
     const root = bip32.fromSeed(seed, network);
-    const child = root.derivePath("m/84'/1'/0'/0/0"); // testnet path
+    const child = root.derivePath("m/84'/1'/0'/0/0");
     const keyPair = ECPair.fromPrivateKey(child.privateKey, { network });
 
-    // Hash the public key first
     const pubkeyHash = bitcoin.crypto.hash160(keyPair.publicKey);
 
-    // Create a native SegWit (bech32) address
     const { address } = bitcoin.payments.p2wpkh({
       hash: pubkeyHash,
       network: network,
