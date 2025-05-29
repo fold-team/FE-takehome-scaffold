@@ -17,15 +17,14 @@ This project simulates a core part of the Fold app experience: sending Bitcoin a
 - If I enter an invalid BTC address or an amount that’s too large (over my balance), I should see helpful validation feedback.
 - When I submit the form, a **new transaction** should be added to the transaction list
 - Try to think about how all this would work in a real app scenario.
+- Make sure inputs and amounts are formatted correctly
 
 **optional**: You can use a regex or a BTC validation library
 
-Make sure inputs and amounts are formatted correctly
-
 ### 2. As a user, I want to see my transaction history in one place
 
-- I should be able to view a list of all Bitcoin transactions I’ve sent.
-- A reusable `TransactionItem` component should handle display.
+- I should be able to view a list of all Bitcoin transactions I’ve sent or received.
+- Create a reusable `TransactionItem` component that would handle display.
 - You should see a mock of the transactiondata in the `TransactionList` component, feel free to add more data to the mock if needed
 
 ## Notes
