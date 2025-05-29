@@ -1,4 +1,4 @@
-import { SendBitcoin } from "@/features/wallet/SendBitcoin";
+import { SendBitcoin } from "@/components/wallet/SendBitcoin";
 import React from "react";
 import { StyleSheet, View } from "react-native";
 

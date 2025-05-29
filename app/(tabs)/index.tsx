@@ -1,5 +1,5 @@
-import { TransactionList } from "@/features/transactions/TransactionList";
-import { WalletBalance } from "@/features/wallet/WalletBalance";
+import { TransactionList } from "@/components/transactions/TransactionList";
+import { WalletBalance } from "@/components/wallet/WalletBalance";
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
