@@ -46,6 +46,7 @@ If you'd like to go further, feel free to mock a **real testnet transaction** us
 You can run the app with:
 
 ```bash
+npm install -g expo-cli
 npm install
 npm start
 ```
