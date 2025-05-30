@@ -11,12 +11,16 @@ This project simulates a core part of the Fold app experience: sending Bitcoin a
 - You'll be extending the existing app to support sending Bitcoin to another address and viewing a transaction history.
 - You're encouraged to bring your own decisions to state management, user flow, and code structure.
 
+## Your Task
+
+Implement the following two user stories:
+
 ### 1. As a user, I want to send Bitcoin to another address
 
 - I should be able to enter a recipient's **Bitcoin address**, a **BTC amount**, and see the USD equivalent.
-- If I enter an invalid BTC address or an amount that's too large (over my balance), I should see helpful validation feedback.
+- The app should provide input validation where necessary
 - When I submit the form, a **new transaction** should be added to the transaction list.
-- Try to think about how all this would work in a real app scenario.
+- Consider how this would work in a real app scenario.
 - Make sure inputs and amounts are formatted correctly.
 
 **optional**: You can use a regex or a BTC validation library if you'd like.
@@ -24,14 +28,14 @@ This project simulates a core part of the Fold app experience: sending Bitcoin a
 ### 2. As a user, I want to see my transaction history in one place
 
 - I should be able to view a list of all my past Bitcoin transactions I've sent or received.
-- Create a reusable `TransactionItem` component that would handle display.
-- You should see a mock of the transaction data in the `TransactionList` component, feel free to add more data to the mock if needed.
+- Create a reusable component that would handle display.
+- You should see a mock of the transaction data in the component, feel free to add more data to the mock if needed.
 
 ## Notes
 
 - Feel free to add any libraries that you feel will help in your solution.
 - Add unit tests where you feel appropriate - don't go crazy.
-- Update the README to reflect any thoughts you might have e.g what you would do if you had more time that sort of thing.
+- Update the README to reflect any thoughts you might have (ex: what you would do if you had more time that sort of thing).
 
 ## Bonus: Simulate a Real Blockchain Transaction
 
