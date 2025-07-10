@@ -55,7 +55,7 @@ npm start
 
 When you're done, please submit:
 - Create a private repository on Github.
-- Add Tiffany, Bryce, Victor and Spencer as collaborators using these handles: tiffsaw, smallzZz8, martins5225 and vineyardbovines.
+- Add Tiffany, Bryce and Spencer as collaborators using these handles: tiffsaw, smallzZz8 and vineyardbovines.
 - Any notes that you'd like to share in your README (ex: assumptions you made, tradeoffs or decisions and what you'd improve with more time).
 
 ## Time Expectation
