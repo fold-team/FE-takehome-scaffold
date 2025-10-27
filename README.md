@@ -2,61 +2,64 @@
 
 Welcome to the Fold Frontend Take-Home Challenge.
 
-This project simulates a core part of the Fold app experience: sending Bitcoin and viewing past transactions. The goal is to see how you approach building features, solving coding problems, and iterating on an existing codebase.
+For this project, you will create a basic bitcoin wallet app. This app will allow a user to view and send transactions. See details below for what we are expecting in terms of implementation.
 
-## Getting Started
-
-- This project is scaffolded with basic routing and UI already in place.
-- Preview works on **Expo Go** - no build steps needed.
-- You'll be extending the existing app to support sending Bitcoin to another address and viewing a transaction history.
-- You're encouraged to bring your own decisions to state management, user flow, and code structure.
-
-## Your Task
-
-Implement the following two user stories:
-
-### 1. As a user, I want to send Bitcoin to another address
-
+## Requirements
 - I should be able to enter a recipient's **Bitcoin address**, a **BTC amount**, and see the USD equivalent.
 - The app should provide input validation where necessary
-- When I submit the form, a **new transaction** should be added to the transaction list.
+- When I submit the form, a **new transaction** should be added to a transaction list.
 - Consider how this would work in a real app scenario.
 - Make sure inputs and amounts are formatted correctly.
 
-**optional**: You can use a regex or a BTC validation library if you'd like.
-
-### 2. As a user, I want to see my transaction history in one place
-
-- I should be able to view a list of all my past Bitcoin transactions I've sent or received.
-- Create a reusable component that would handle display.
-- You should see a mock of the transaction data in the component, feel free to add more data to the mock if needed.
-
-## Notes
-
-- Feel free to add any libraries that you feel will help in your solution.
-- Add unit tests where you feel appropriate - don't go crazy.
-- Update the README to reflect any thoughts you might have (ex: what you would do if you had more time that sort of thing).
-
-## Bonus: Simulate a Real Blockchain Transaction
-
-If you'd like to go further, feel free to mock a **real testnet transaction** using the Bitcoin Testnet API (like [Blockstream](https://blockstream.info/testnet/api/) or [mempool.space](https://mempool.space/testnet/)). This isn't required - just a nice touch if you want to show real integration or async flow.
-
-## Previewing the App
+## Running the App
 
 You can run the app with:
 
 ```bash
 npm install -g expo-cli
 npm install
-npm start
+npm run ios
 ```
 
-## Submitting your Work
+## Task
+1. Create a way to show all transactions in a list. 
+    - You can find the mock transactions in the constants/MockTransactions.ts file.
+    - Keep performance in mind when implementing this. 
 
-When you're done, please submit:
-- Create a private repository on Github.
-- Add Tiffany, Bryce and Spencer as collaborators using these handles: tiffsaw, smallzZz8 and vineyardbovines.
-- Any notes that you'd like to share in your README (ex: assumptions you made, tradeoffs or decisions and what you'd improve with more time).
+2. Use an input to create the recipient address and amount inputs in the SendBitcoin component.
+    - Please use validation for bitcoin amounts.
+        - Amounts input should have a max value button that will set the input to the maximum sendable value.
+    - Please use validation for recipient addresses. We expect to only accept a valid bitcoin address.
+
+3. A user can not send more bitcoin than they have in their wallet minus the network fee.
+    - The network fee can be found in the constants/NetorkFee.ts file.
+    - A user should see the network fee in the UI.
+
+4. When a user submits the form, a new transaction should be added to the transaction list.
+    - The transaction should be added to the top of the list.
+    - The transaction should be added to the list with the correct type, amount, timestamp, address, and status or any other data that you think is relevant.
+
+5. Now that the transaction is added to the list, the user should be able to click on a transaction to view the details.
+    - Show all relevant data for the transaction.
+
+## Notes
+- All visual design is up to you. We have intentionally degraded the design to allow you to have free reign over the design and layout.
+- How do you think of success or failure of the transaction?
+- The user should be able to see their balance on the Wallet Homescreen.
+- The user should be able to see their balance in the SendBitcoin component.
+- At Fold we think about reusability, scalability, and performance. Please keep this in mind when implementing the solution.
+- Use any packages that you think are relevant to the solution.
+- Please feel free to rearrange, reorganize, or refactor any filestructure, code, or anything else that you think is relevant to the solution.
+- All buttons and inputs should be reusable and used throughout the app for consistent styling and behavior.
+
+
+## Bonus
+* Integrate a real bitcoin coversion rate and update the ui with current exchange rate.
+    - Can use [this API](https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd) to get the current exchange rate.
+* Integrate realtime network fee estimation.
+    - Can use [this API](https://mempool.space/docs/api/rest#get-recommended-fees) to get the recommended network fee.
+* Animations? Anything you think is relevant to make the app more engaging.
+* Dark mode and light mode support.
 
 ## Time Expectation
-This challenge is designed to take around 2 hours. Focus on your best judgment, clean code, and a thoughtful implementation.
+This challenge is designed to take around 6 hours. Focus on your best judgment, clean code, and a thoughtful implementation.

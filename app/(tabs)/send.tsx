@@ -12,7 +12,6 @@ export default function SendScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    paddingTop: 70,
+    flex: 1, 
   },
 });

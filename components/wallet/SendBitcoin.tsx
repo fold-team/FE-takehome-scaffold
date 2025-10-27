@@ -86,6 +86,8 @@ export const SendBitcoin = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: "center",
+    width: "100%",
   },
   header: {
     padding: 20,
@@ -167,10 +169,11 @@ const styles = StyleSheet.create({
   },
   sendButton: {
     backgroundColor: Colors.light.tint,
-    height: 56,
-    borderRadius: 28,
+    height: 56, 
     justifyContent: "center",
     alignItems: "center",
+    width: 250,
+    alignSelf: "center",
   },
   sendButtonDisabled: {
     backgroundColor: Colors.light.icon + "40",
